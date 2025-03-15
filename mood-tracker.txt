@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoodNest - Mood Tracker</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f6f4fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      text-align: center;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    h1 {
+      color: #82085c;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    p.description {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+    .mood-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    .mood-option {
+      background: #fff;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      padding: 20px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .mood-option:hover {
+      background-color: #e8dcf0;
+      border-color: #82085c;
+      color: #82085c;
+    }
+    .selected {
+      background-color: #82085c;
+      color: #fff;
+      border-color: #82085c;
+    }
+    .note {
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Track Your Mood</h1>
+    <p class="description">How are you feeling right now? Tap a mood to check in.</p>
+
+    <div class="mood-grid">
+      <div class="mood-option">😊 Happy</div>
+      <div class="mood-option">😐 Neutral</div>
+      <div class="mood-option">😔 Sad</div>
+      <div class="mood-option">😠 Angry</div>
+      <div class="mood-option">😨 Anxious</div>
+      <div class="mood-option">😴 Tired</div>
+    </div>
+
+    <p class="note">Coming soon: View your mood history and connect with daily affirmations!</p>
+  </div>
+
+  <script>
+    const moods = document.querySelectorAll('.mood-option');
+    moods.forEach(mood => {
+      mood.addEventListener('click', () => {
+        moods.forEach(m => m.classList.remove('selected'));
+        mood.classList.add('selected');
+      });
+    });
+  </script>
+</body>
+</html>
