@@ -103,6 +103,36 @@
     .generate-btn:hover {
       background-color: #a8328e;
     }
+    .affirmation-section, .premium-section {
+      background-color: #fff7fb;
+      border-radius: 12px;
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .affirmation-card, .tip-card {
+      padding: 15px;
+      background-color: #fef2f8;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      font-style: italic;
+    }
+    .premium-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      background-color: #6a0dad;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .premium-btn:hover {
+      background-color: #a347ff;
+    }
   </style>
 </head>
 <body>
@@ -133,7 +163,30 @@
     <br><br>
     <textarea rows="4" placeholder="Write about what's on your mind..."></textarea>
     <br>
-    <button class="generate-btn">💬 Generate Affirmation</button>
+    <button class="generate-btn" onclick="showGeneratedAffirmation()">💬 Generate Affirmation</button>
+    <div id="generated-affirmation" style="margin-top: 20px; font-style: italic; display: none;"></div>
+  </section>
+
+  <section class="affirmation-section" data-aos="fade-up">
+    <h3>🌿 Calming Affirmations</h3>
+    <div class="affirmation-card">✨ I am exactly where I need to be, and I trust the timing of my life.</div>
+    <div class="affirmation-card">🕊️ With each breath, I feel calmer and more in control.</div>
+    <div class="affirmation-card">🌸 I give myself permission to slow down and rest.</div>
+    <div class="affirmation-card">💗 I release what I cannot control and trust myself to cope.</div>
+    <div class="affirmation-card">🌅 This moment is safe, and I am safe within it.</div>
+    <div class="affirmation-card">🌼 I have the power to choose peace over worry.</div>
+    <div class="affirmation-card">🍃 Each breath I take nurtures me from within.</div>
+    <div class="affirmation-card">🧘 I honor my need for rest, reflection, and renewal.</div>
+  </section>
+
+  <section class="premium-section" data-aos="fade-up">
+    <h3>💎 Coping Tips & Self-Care Lessons</h3>
+    <div class="tip-card">🧘‍♀️ Deep Breathing: Inhale for 4 seconds, hold for 4, exhale for 6. Repeat 5 times.</div>
+    <div class="tip-card">🧠 Core Beliefs: Notice limiting beliefs and replace them with kind, realistic thoughts.</div>
+    <div class="tip-card">🌙 Sleep Tips: Try a screen-free hour before bed and dim lights for restful sleep.</div>
+    <div class="tip-card">🥗 Healthy Eating: Build your plate with lean protein, veggies, and healthy fats.</div>
+    <div class="tip-card">📖 Story: "Jasmine paused before her panic rose. She whispered, 'I am safe,' and placed her hand on her heart..."</div>
+    <a href="#" class="premium-btn">✨ Explore Full Course & Premium Tools</a>
   </section>
 
   <section class="form-area" data-aos="fade-up">
@@ -148,6 +201,21 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
+
+    const affirmations = [
+      "You are stronger than your anxious thoughts.",
+      "Peace begins with a single breath.",
+      "Every emotion you feel is valid.",
+      "You are not alone. Support is always available.",
+      "You’ve overcome challenges before — you can do it again."
+    ];
+
+    function showGeneratedAffirmation() {
+      const random = affirmations[Math.floor(Math.random() * affirmations.length)];
+      const output = document.getElementById('generated-affirmation');
+      output.innerText = random;
+      output.style.display = 'block';
+    }
   </script>
 </body>
 </html>
