@@ -8,51 +8,7 @@
   </div>
   <h3>✨ Samantha – From Panic to Peace</h3>
   <p>After feeling anxious every morning, Samantha started journaling and using grounding affirmations. Within weeks, she learned to pause and breathe through overwhelming moments.</p>
-</div>
-card {
-  position: relative;
-  flex: 0 0 80%;
-  scroll-snap-align: center;
-  background-color: #f7faff;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  min-width: 280px;
-  max-width: 400px;
-  margin: auto;
-  overflow: hidden;
-}
 
-.card-buttons {
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  display: flex;
-  gap: 10px;
-}
-
-.card-buttons button {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.card-buttons button:hover {
-  transform: scale(1.2);
-}
-document.querySelectorAll('.heart-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.textContent = btn.textContent === '❤️' ? '💖' : '❤️';
-  });
-});
-
-document.querySelectorAll('.bookmark-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.textContent = btn.textContent === '🔖' ? '📌' : '🔖';
-  });
-});
   <div class="carousel">
 
     <div class="card">
