@@ -221,3 +221,100 @@
 </html>
 <div style="margin-top: 30px; text-align: center;">
   <h3 style="color: #6c63ff;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoodNest Flip Cards</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f3f4fb;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #6c63ff;
+      margin-bottom: 30px;
+    }
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      perspective: 1000px;
+    }
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+    .card:hover .card-inner,
+    .card.flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+    .card-front,
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      font-size: 16px;
+      background-color: #ffffff;
+      backface-visibility: hidden;
+    }
+    .card-back {
+      transform: rotateY(180deg);
+      background-color: #e7e8ff;
+    }
+    .premium-button {
+      margin-bottom: 20px;
+    }
+    .premium-button h2 {
+      color:#6c63ff;
+    }
+    .premium-button p {
+      font-size: 16px;
+    }
+    .premium-button button {
+      padding: 12px 24px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="premium-button">
+    <h2>✨ Unlock MoodNest Premium Flip Card Game</h2>
+    <p>Get lifetime access to the calming flip card experience to help kids manage anxiety and panic moments.</p>
+    <a href="https://gumroad.com/l/qrdlp" target="_blank">
+      <button>🔓 Unlock Flip Card Game</button>
+    </a>
+  </div>
+
+  <h1>MoodNest Flip Cards 🌈</h1>
+  <div class="card-container">
+    <!-- 25 Cards Start -->
+    <!-- Your full list of cards remains here -->
+    <!-- 25 Cards End -->
+  </div>
+</body>
+</html>
