@@ -1,259 +1,109 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MoodNest Flip Cards – Emotional Wellness</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodNest Beta Sign-Up</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f3f4fb;
       margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #fdeaff, #f5eaff);
+      color: #333;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    .section {
+      background: #fff0fa;
       padding: 20px;
-      text-align: center;
+      border-radius: 18px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
     }
 
-    h1 {
-      color: #6c63ff;
-      margin-bottom: 30px;
-    }
-
-    .card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .card {
-      perspective: 1000px;
-    }
-
-    .card-inner {
-      position: relative;
-      width: 100%;
-      height: 200px;
-      text-align: center;
-      transition: transform 0.6s;
-      transform-style: preserve-3d;
-      cursor: pointer;
-    }
-
-    .card:hover .card-inner,
-    .card.flipped .card-inner {
-      transform: rotateY(180deg);
-    }
-
-    .card-front,
-    .card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .affirmation {
+      background: #ffe9f5;
+      margin: 10px 0;
       padding: 15px;
-      font-size: 16px;
-      background-color: #ffffff;
-      backface-visibility: hidden;
+      border-radius: 14px;
+      font-size: 1rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
     }
 
-    .card-back {
-      transform: rotateY(180deg);
-      background-color: #e7e8ff;
+    .section-title {
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: #7b3ca0;
+    }
+
+    .tip {
+      background: #f9ecff;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 14px;
+      font-size: 1rem;
+    }
+
+    .button-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 50px;
+    }
+
+    .btn {
+      background-color: #d8b5ff;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #c290f1;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>MoodNest Flip Cards 🌈</h1>
-  <div class="card-container">
-    <!-- 25 Cards Start -->
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">👀 Name 5 things you can see</div>
-        <div class="card-back">🌼 You’re grounded in the now. You’re doing great.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">👂 Name 4 things you can hear</div>
-        <div class="card-back">🎧 You are present. Your senses are helping you feel safe.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">✋ Touch 3 things around you</div>
-        <div class="card-back">🧸 Soft textures calm your body. You’re safe.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">👃 Smell 2 things</div>
-        <div class="card-back">🌸 Breathing helps your body relax. You’re okay.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">👅 Taste 1 thing or imagine your favorite food</div>
-        <div class="card-back">🍓 Your body is coming back to calm. You’re in control.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">🧘 Take 3 slow belly breaths</div>
-        <div class="card-back">🌬️ Inhale peace… exhale the worry. You’re strong.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">🤲 Rub your hands together</div>
-        <div class="card-back">🔥 Feel the warmth? That’s your power returning.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">👣 Wiggle your toes and feet</div>
-        <div class="card-back">🌈 You’re grounded. You’re safe right here.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">🎵 Hum your favorite song</div>
-        <div class="card-back">🎤 Your voice is calm. You’re bringing comfort to yourself.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">🧸 Hold your favorite stuffed animal or soft item</div>
-        <div class="card-back">🫶 It’s okay to need comfort. You’re doing the right thing.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">⏸️ Press your palms together firmly</div>
-        <div class="card-back">🧩 This gives your brain a rest and resets your heart.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">🖐️ Trace your fingers while breathing in and out</div>
-        <div class="card-back">🌿 You’re finding your calm. One breath at a time.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">🤗 Give yourself a tight hug</div>
-        <div class="card-back">💛 You are loved. You are safe. You are enough.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">👋 Shake out your hands like raindrops</div>
-        <div class="card-back">💦 Let the stress fall away. You’re in control again.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">💭 Whisper 3 kind things to yourself</div>
-        <div class="card-back">✨ You deserve gentle words and calm feelings.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">🎈 Imagine a balloon floating your worry away</div>
-        <div class="card-back">🎈 Let it go… let it rise… let peace return.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">🔔 Tap gently on your chest</div>
-        <div class="card-back">💗 Tapping calms your nervous system. Feel the rhythm of safety.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">👁️ Close your eyes for 10 seconds</div>
-        <div class="card-back">🌙 You are resting. Everything is slowing down.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">🐢 Move like a slow turtle for 30 seconds</div>
-        <div class="card-back">🐢 Slowing down helps your brain feel safe.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">🔄 Count backward from 10</div>
-        <div class="card-back">⏳ Counting gives your mind something peaceful to hold.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">📦 Imagine putting your worry in a box</div>
-        <div class="card-back">📪 The box is closed. You’ll open it only when ready.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">📸 Picture your happiest memory</div>
-        <div class="card-back">🎉 That memory is your anchor. You’re still that joyful you.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">🧠 Say: “This is a feeling. It will pass.”</div>
-        <div class="card-back">🌥️ You’re not the feeling. You’re bigger than the moment.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">🎨 Draw or color how you feel</div>
-        <div class="card-back">🖍️ Creativity helps your emotions find a way out.</div>
-      </div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('flipped')">
-      <div class="card-inner">
-        <div class="card-front">🛑 Say out loud: “STOP” to interrupt the panic</div>
-        <div class="card-back">🟢 Now breathe. You are strong and in charge.</div>
-      </div>
-    </div>
-    <!-- 25 Cards End -->
-  </div>
-</body>
-</html>
-<h2 style="color:#6c63ff; margin-top: 40px;">🌟 Explore MoodNest Premium Pages</h2>
+  <div class="container">
 
-<div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+    <!-- Affirmations Section -->
+    <div class="section">
+      <div class="section-title">🌿 Daily Affirmations</div>
 
-  <!-- Meditation & Mood Sheet -->
-  <a href="https://moodnestwellness.gumroad.com/l/meditation" target="_blank" style="text-decoration: none;">
-    <button style="padding: 16px 24px; background: #b47bff; color: white; font-size: 16px; border: none; border-radius: 12px; cursor: pointer;">
-      🧘 MoodNest Meditation & Mood Sheet – $3
-    </button>
-  </a>
+      <div class="affirmation">✨ I am exactly where I need to be, and I trust the timing of my life.</div>
+      <div class="affirmation">🪷 With each breath, I feel calmer and more in control.</div>
+      <div class="affirmation">🌸 I give myself permission to slow down and rest.</div>
+      <div class="affirmation">💗 I release what I cannot control and trust myself to cope.</div>
+      <div class="affirmation">🔷 This moment is safe, and I am safe within it.</div>
+      <div class="affirmation">🪴 I have the power to choose peace over worry.</div>
+      <div class="affirmation">🌿 Each breath I take nurtures me from within.</div>
+      <div class="affirmation">🧘 I honor my need for rest, reflection, and renewal.</div>
+    </div>
 
-  <!-- Core Beliefs -->
-  <a href="https://moodnestwellness.gumroad.com/l/corebeliefs" target="_blank" style="text-decoration: none;">
-    <button style="padding: 16px 24px; background: #ff69b4; color: white; font-size: 16px; border: none; border-radius: 12px; cursor: pointer;">
-      🧠 Rewrite Core Beliefs – $2
-    </button>
-  </a>
+    <!-- Coping Tips Section -->
+    <div class="section">
+      <div class="section-title">💎 Coping Tips & Self-Care Lessons</div>
 
-  <!-- Sleep & Rest Rituals -->
-  <a href="https://moodnestwellness.gumroad.com/l/sleep" target="_blank" style="text-decoration: none;">
-    <button style="padding: 16px 24px; background: #6c63ff; color: white; font-size: 16px; border: none; border-radius: 12px; cursor: pointer;">
-      🌙 Sleep & Rest Rituals – $5
-    </button>
-  </a>
-
-  <!-- Healthy Mood Eating -->
-  <a href="https://moodnestwellness.gumroad.com/l/healthy" target="_blank" style="text-decoration: none;">
-    <button style="padding: 16px 24px; background: #5ab2b7; color: white; font-size: 16px; border: none; border-radius: 12px; cursor: pointer;">
-      🥗 Healthy Mood Eating – $7
-    </button>
-  </a>
-
-</div>
+      <div class="tip">🧘‍♀️ <strong>Deep Breathing:</strong> Inhale for 4 seconds, hold for 4, exhale for 6. Repeat 5 times.</div>
+      <div class="tip">🧠 <strong>Core Beliefs:</strong> Notice limiting beliefs and replace them with kind, realistic thoughts.</div>
+      <div class="tip">🌙 <strong>Sleep Tips:</strong> Try a screen-free hour before bed and dim lights for restful sleep.</div>
+      <div class="tip">🥗 <strong>Healthy Eating:</strong> Build your plate with lean protein, veggies, and healthy fats.</div>
+    </div>
