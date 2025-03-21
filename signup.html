@@ -2,415 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MoodNest Beta Test Sign-Up</title>
-  <link rel="icon" href="favicon.png" type="image/png">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodNest Beta Sign-Up</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #fff0f5, #f3e6ff);
       margin: 0;
       padding: 0;
-      color: #4a154b;
-      text-align: center;
-    }
-    header {
-      padding: 40px 20px 20px;
-    }
-    h1 {
-      color: #82085c;
-      font-size: 2rem;
-    }
-    p {
-      max-width: 700px;
-      margin: 10px auto;
-      line-height: 1.5;
-    }
-    .highlight {
-      color: #a8328e;
-      font-weight: bold;
-    }
-    iframe {
-      margin-top: 20px;
-      width: 90%;
-      max-width: 560px;
-      height: 315px;
-      border: none;
-      border-radius: 12px;
-    }
-    .form-area {
-      padding: 20px;
-      background-color: #fceeff;
-      border-radius: 12px;
-      max-width: 700px;
-      margin: 40px auto;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    footer {
-      margin-top: 60px;
-      font-size: 0.9rem;
-      color: #888;
-      padding: 30px;
-    }
-    .feelings-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin: 30px auto;
-    }
-    .feeling-button {
-      padding: 15px 20px;
-      border: none;
-      border-radius: 20px;
-      background-color: #82085c;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-    .feeling-button:hover {
-      background-color: #a8328e;
-      transform: scale(1.05);
-    }
-    .questionnaire {
-      background-color: #fff0f9;
-      max-width: 700px;
-      margin: 30px auto;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-    .questionnaire textarea {
-      width: 90%;
-      padding: 10px;
-      font-size: 1rem;
-      margin-top: 10px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-    }
-    .generate-btn {
-      background-color: #82085c;
-      color: #fff;
-      padding: 10px 20px;
-      margin-top: 15px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-    }
-    .generate-btn:hover {
-      background-color: #a8328e;
-    }
-    .affirmation-section, .premium-section {
-      background-color: #fff7fb;
-      border-radius: 12px;
-      max-width: 700px;
-      margin: 30px auto;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-    .affirmation-card, .tip-card {
-      padding: 15px;
-      background-color: #fef2f8;
-      margin-bottom: 15px;
-      border-radius: 10px;
-      font-style: italic;
-    }
-    .premium-btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      font-size: 1.1rem;
-      background-color: #6a0dad;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .premium-btn:hover {
-      background-color: #a347ff;
-    }
-  </style>
-</head>
-<body>
-  <header data-aos="fade-down">
-    <h1>MoodNest Beta Test Sign-Up</h1>
-    <p><strong>Welcome to MoodNest</strong> 💜 We’re so excited to have you join our early access beta!</p>
-    <p>Thank you for your interest in <strong>MoodNest</strong> — an emotional wellness app that helps you declutter your mind, one emotion at a time. We’re inviting a small group of early users to test MoodNest before its public launch. Please complete the form below to join the beta list!</p>
-    <p class="highlight">✨ Let’s discover a safe space for our emotional balance, clarity, and growth!</p>
-    <p>💜 <strong>Watch This First – What is MoodNest?</strong></p>
-    <iframe src="https://www.youtube.com/embed/BSOjU0sRNmE" title="What is MoodNest video" data-aos="fade-up"></iframe>
-  </header>
-
-  <section class="feelings-grid" data-aos="fade-up">
-    <button class="feeling-button">😰 Anxious</button>
-    <button class="feeling-button">😡 Angry</button>
-    <button class="feeling-button">😞 Lonely</button>
-    <button class="feeling-button">😌 Calm</button>
-    <button class="feeling-button">🤗 Loved</button>
-    <button class="feeling-button">😔 Sad</button>
-  </section>
-
-  <section class="questionnaire" data-aos="fade-up">
-    <h3>📝 How are you feeling today?</h3>
-    <label><input type="radio" name="feeling" value="happy"> Happy</label>
-    <label><input type="radio" name="feeling" value="anxious"> Anxious</label>
-    <label><input type="radio" name="feeling" value="angry"> Angry</label>
-    <label><input type="radio" name="feeling" value="sad"> Sad</label>
-    <br><br>
-    <textarea rows="4" placeholder="Write about what's on your mind..."></textarea>
-    <br>
-    <button class="generate-btn" onclick="showGeneratedAffirmation()">💬 Generate Affirmation</button>
-    <div id="generated-affirmation" style="margin-top: 20px; font-style: italic; display: none;"></div>
-  </section>
-
-  <section class="affirmation-section" data-aos="fade-up">
-    <h3>🌿 Calming Affirmations</h3>
-    <div class="affirmation-card">✨ I am exactly where I need to be, and I trust the timing of my life.</div>
-    <div class="affirmation-card">🕊️ With each breath, I feel calmer and more in control.</div>
-    <div class="affirmation-card">🌸 I give myself permission to slow down and rest.</div>
-    <div class="affirmation-card">💗 I release what I cannot control and trust myself to cope.</div>
-    <div class="affirmation-card">🌅 This moment is safe, and I am safe within it.</div>
-    <div class="affirmation-card">🌼 I have the power to choose peace over worry.</div>
-    <div class="affirmation-card">🍃 Each breath I take nurtures me from within.</div>
-    <div class="affirmation-card">🧘 I honor my need for rest, reflection, and renewal.</div>
-  </section>
-
-  <section class="premium-section" data-aos="fade-up">
-    <h3>💎 Coping Tips & Self-Care Lessons</h3>
-    <div class="tip-card">🧘‍♀️ Deep Breathing: Inhale for 4 seconds, hold for 4, exhale for 6. Repeat 5 times.</div>
-    <div class="tip-card">🧠 Core Beliefs: Notice limiting beliefs and replace them with kind, realistic thoughts.</div>
-    <div class="tip-card">🌙 Sleep Tips: Try a screen-free hour before bed and dim lights for restful sleep.</div>
-    <div class="tip-card">🥗 Healthy Eating: Build your plate with lean protein, veggies, and healthy fats.</div>
-    <div class="tip-card">📖 Story: "Jasmine paused before her panic rose. She whispered, 'I am safe,' and placed her hand on her heart..."</div>
-    <a href="#" class="premium-btn">✨ Explore Full Course & Premium Tools</a>
-  </section>
-
-  <section class="form-area" data-aos="fade-up">
-    <p>📩 <strong>Ready to join us?</strong> Fill out the form below to reserve your early access spot.</p>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd214v9WKTpCmzWsMdyeWNdfOr04-qls5gf2UYA8pfUkEhrXA/viewform?embedded=true" width="100%" height="800">Loading…</iframe>
-  </section>
-
-  <footer>
-    MoodNest &copy; 2025 — Built with care for your emotional wellness 💜
-  </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    const affirmations = [
-      "You are stronger than your anxious thoughts.",
-      "Peace begins with a single breath.",
-      "Every emotion you feel is valid.",
-      "You are not alone. Support is always available.",
-      "You’ve overcome challenges before — you can do it again."
-    ];
-
-    function showGeneratedAffirmation() {
-      const random = affirmations[Math.floor(Math.random() * affirmations.length)];
-      const output = document.getElementById('generated-affirmation');
-      output.innerText = random;
-      output.style.display = 'block';
-    }
-  </script>
-</body>
-</html>
-<div style="margin-top: 30px; text-align: center;">
-  <h3 style="color: #6c63ff;">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MoodNest Flip Cards</title>
-  <style>
-    body {
       font-family: 'Segoe UI', sans-serif;
-      background: #f3f4fb;
-      margin: 0;
+      background: linear-gradient(to bottom right, #fdeaff, #f5eaff);
+      color: #333;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    .section {
+      background: #fff0fa;
       padding: 20px;
-      text-align: center;
-    }
-    h1 {
-      color: #6c63ff;
-      margin-bottom: 30px;
-    }
-    .card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-    .card {
-      perspective: 1000px;
-    }
-    .card-inner {
-      position: relative;
-      width: 100%;
-      height: 200px;
-      text-align: center;
-      transition: transform 0.6s;
-      transform-style: preserve-3d;
-      cursor: pointer;
-    }
-    .card:hover .card-inner,
-    .card.flipped .card-inner {
-      transform: rotateY(180deg);
-    }
-    .card-front,
-    .card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 15px;
-      font-size: 16px;
-      background-color: #ffffff;
-      backface-visibility: hidden;
-    }
-    .card-back {
-      transform: rotateY(180deg);
-      background-color: #e7e8ff;
-    }
-    .premium-button {
-      margin-bottom: 20px;
-    }
-    .premium-button h2 {
-      color:#6c63ff;
-    }
-    .premium-button p {
-      font-size: 16px;
-    }
-    .premium-button button {
-      padding: 12px 24px;
-      background-color: #ff69b4;
-      color: white;
-      border: none;
-      border-radius: 12px;
-      font-size: 16px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-  </style>
-</head>
-<body>
-  <div class="premium-button">
-    <h2>✨ Unlock MoodNest Premium Flip Card Game</h2>
-    <p>Get lifetime access to the calming flip card experience to help kids manage anxiety and panic moments.</p>
-    <a href="https://gumroad.com/l/qrdlp" target="_blank">
-      <button>🔓 Unlock Flip Card Game</button>
-    </a>
-  </div>
-
-  <div class="premium-button">
-    <h2>🛏️ Sleep & Rest Rituals – MoodNest Premium</h2>
-    <p>Explore soothing bedtime rituals and restful routines to improve sleep and emotional regulation.</p>
-    <a href="https://moodnestwellness.gumroad.com/l/rpwphd" target="_blank">
-      <button>🌙 Unlock Sleep Tools – $5</button>
-    </a>
-  </div>
-
-  <div class="premium-button">
-    <h2>🥗 Healthy Mood Eating – MoodNest Premium</h2>
-    <p>Discover food-mood connections and build a nourishing meal plan to support mental clarity and calm.</p>
-    <a href="https://gumroad.com/l/iqvaud" target="_blank">
-      <button>🍽️ Unlock Eating Guide – $7</button>
-    </a>
-  </div>
-
-  <div class="premium-button">
-    <h2>🧠 Rewrite Core Beliefs – MoodNest Premium</h2>
-    <p>Reframe limiting thoughts and build an empowering self-talk practice for emotional resilience.</p>
-    <a href="https://gumroad.com/l/jbxsv" target="_blank">
-      <button>💬 Unlock Core Beliefs – $2</button>
-    </a>
-  </div>
-
-  <h1>MoodNest Flip Cards 🌈</h1>
-  <div class="card-container">
-    <!-- 25 Cards Start -->
-    <!-- Your full list of cards remains here -->
-    <!-- 25 Cards End -->
-  </div>
-</body>
-</html>
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to MoodNest 🌿</title>
-  <link rel="icon" href="favicon.png" type="image/png">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #f8f1ff, #e3e9ff);
-      color: #4a4a4a;
-      text-align: center;
-    }
-    header {
-      padding: 40px 20px 20px;
-    }
-    h1 {
-      color: #6c63ff;
-      font-size: 2.5rem;
-    }
-    p.description {
-      max-width: 600px;
-      margin: 0 auto 30px;
-      font-size: 18px;
-      color: #666;
-    }
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
+      border-radius: 18px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
       margin-bottom: 40px;
     }
-    .buttons a {
-      padding: 15px 25px;
-      background-color: #6c63ff;
-      color: white;
+
+    .affirmation {
+      background: #ffe9f5;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 14px;
+      font-size: 1rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    }
+
+    .section-title {
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: #7b3ca0;
+    }
+
+    .tip {
+      background: #f9ecff;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 14px;
+      font-size: 1rem;
+    }
+
+    .button-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 50px;
+    }
+
+    .btn {
+      background-color: #d8b5ff;
+      color: #fff;
       text-decoration: none;
+      padding: 12px 20px;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: background-color 0.3s ease;
+      text-align: center;
+      font-size: 1rem;
+      transition: background 0.3s ease;
     }
-    .buttons a:hover {
-      background-color: #5a53cc;
+
+    .btn:hover {
+      background-color: #c290f1;
     }
-    footer {
-      font-size: 14px;
-      color: #aaa;
-      padding: 20px;
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
     }
   </style>
 </head>
 <body>
-  <header><div style="margin-top: 30px;">
-  <h3>🌟 Explore MoodNest Premium Pages</h3>
-  <a href="https://moodnestwellness.gumroad.com/l/qrdlp" target="_blank">
-    <button style="background-color:#c084fc;">🧘‍♀️ MoodNest Meditation & Mood Sheet – $3</button>
-  </a>
-  <a href="https://moodnestwellness.gumroad.com/l/rpwphd" target="_blank">
-    <button style="background-color:#f472b6;">💗 Rewrite Core Beliefs – $2</button>
-  </a>
-  <a href="https://moodnestwellness.gumroad.com/l/iqvaud" target="_blank">
-    <button style="background-color:#818cf8;">🌙 Sleep & Rest Rituals – $5</button>
-  </a>
-  <a href="https://moodnestwellness.gumroad.com/l/jbxsv" target="_blank">
-    <button style="background-color:#5eead4;">🥗 Healthy Mood Eating – $7</button>
-  </a>
-</div>
-    
-   
+  <div class="container">
+
+    <!-- Affirmations Section -->
+    <div class="section">
+      <div class="section-title">🌿 Daily Affirmations</div>
+
+      <div class="affirmation">✨ I am exactly where I need to be, and I trust the timing of my life.</div>
+      <div class="affirmation">🪷 With each breath, I feel calmer and more in control.</div>
+      <div class="affirmation">🌸 I give myself permission to slow down and rest.</div>
+      <div class="affirmation">💗 I release what I cannot control and trust myself to cope.</div>
+      <div class="affirmation">🔷 This moment is safe, and I am safe within it.</div>
+      <div class="affirmation">🪴 I have the power to choose peace over worry.</div>
+      <div class="affirmation">🌿 Each breath I take nurtures me from within.</div>
+      <div class="affirmation">🧘 I honor my need for rest, reflection, and renewal.</div>
+    </div>
+
+    <!-- Coping Tips Section -->
+    <div class="section">
+      <div class="section-title">💎 Coping Tips & Self-Care Lessons</div>
+
+      <div class="tip">🧘‍♀️ <strong>Deep Breathing:</strong> Inhale for 4 seconds, hold for 4, exhale for 6. Repeat 5 times.</div>
+      <div class="tip">🧠 <strong>Core Beliefs:</strong> Notice limiting beliefs and replace them with kind, realistic thoughts.</div>
+      <div class="tip">🌙 <strong>Sleep Tips:</strong> Try a screen-free hour before bed and dim lights for restful sleep.</div>
+      <div class="tip">🥗 <strong>Healthy Eating:</strong> Build your plate with lean protein, veggies, and healthy fats.</div>
+    </div>
