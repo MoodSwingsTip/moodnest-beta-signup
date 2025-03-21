@@ -130,23 +130,53 @@
 
     <!-- Mood Check Section -->
     <div class="section">
-      <div class="section-title">📝 How are you feeling today?</div>
-      <div class="emoji-row">
-        <div class="emoji">😰</div>
-        <div class="emoji">😡</div>
-        <div class="emoji">😞</div>
-        <div class="emoji">😌</div>
-        <div class="emoji">🤗</div>
-        <div class="emoji">😔</div>
-      </div>
-      <div class="emoji-row">
-        <strong>Happy&nbsp;&nbsp; Anxious&nbsp;&nbsp; Angry&nbsp;&nbsp; Sad</strong>
-      </div>
-      <textarea placeholder="Write about what's on your mind..."></textarea>
-      <a href="#" class="btn">💬 Generate Affirmation</a>
-    </div>
+  <div class="section-title">📝 How are you feeling today?</div>
 
-    <!-- Affirmations -->
+  <div class="emoji-row">
+    <div class="emoji">😰</div>
+    <div class="emoji">😡</div>
+    <div class="emoji">😞</div>
+    <div class="emoji">😌</div>
+    <div class="emoji">🤗</div>
+    <div class="emoji">😔</div>
+  </div>
+
+  <div class="emoji-row">
+    <strong>Happy&nbsp;&nbsp; Anxious&nbsp;&nbsp; Angry&nbsp;&nbsp; Sad</strong>
+  </div>
+
+  <textarea id="feelingInput" placeholder="Write about what's on your mind..."></textarea>
+  <button class="btn" onclick="generateAffirmation()">💬 Generate Affirmation</button>
+
+  <div id="affirmationResult" class="affirmation-box" style="display: none; background-color: #fff7fb;"></div>
+</div>
+
+<script>
+  function generateAffirmation() {
+    const input = document.getElementById("feelingInput").value.toLowerCase();
+    const result = document.getElementById("affirmationResult");
+    let affirmation = "";
+
+    if (input.includes("sad")) {
+      affirmation = "🌸 I give myself permission to feel and heal. This sadness is temporary.";
+    } else if (input.includes("angry")) {
+      affirmation = "🔥 I release the tension and allow peace to flow through me.";
+    } else if (input.includes("anxious") || input.includes("nervous")) {
+      affirmation = "🌿 With every breath, I return to calm and inner safety.";
+    } else if (input.includes("happy") || input.includes("grateful")) {
+      affirmation = "☀️ I embrace this joy fully and let it brighten my day.";
+    } else if (input.includes("lonely")) {
+      affirmation = "💗 I am never truly alone — I am connected and cared for.";
+    } else {
+      affirmation = "💬 I am worthy of peace and presence, no matter how I feel.";
+    }
+
+    result.style.display = "block";
+    result.innerText = affirmation;
+  }
+</script>
+
+  <!-- Affirmations -->
     <div class="section">
       <div class="section-title">🌿 Calming Affirmations</div>
       <div class="affirmation">✨ I am exactly where I need to be, and I trust the timing of my life.</div>
